@@ -1,0 +1,52 @@
+\documentclass[twocolumn,10pt,abstract,status=draft]{scrartcl}
+
+% Empfehlungen für andere Objekte: graphicx, tabularx, algorithm
+\usepackage[style=authoryear]{biblatex}
+\usepackage[nolist]{acronym}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english,ngerman]{babel}
+\usepackage[margin=20mm,bottom=32.5mm]{geometry}
+\usepackage{csquotes,fixme,fontspec,listings,xcolor,xurl}
+
+\bibliography{PA}
+\input hilfe/Einstellungen
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt plus 4mm minus 3mm}
+\setlength{\columnsep}{1cm}
+
+\setcounter{secnumdepth}{0}
+\setkomafont{section}{\centering\large}
+\setkomafont{subsection}{\normalsize}
+\RedeclareSectionCommand[runin=false,beforeskip=0pt,afterskip=-10pt]{section}
+\RedeclareSectionCommand[runin=false,beforeskip=0pt,afterskip=-10pt]{subsection}
+
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+
+\setkomafont{title}{\LARGE\bfseries}
+\setkomafont{author}{\normalsize}
+\setkomafont{date}{\tiny}
+\title{\titel}
+\author{\textbf{\autor}\\\small\matrikelnr, \firma\\\small\email}
+\date{}
+
+\lstset{basicstyle=\ttfamily,breaklines,backgroundcolor=\color[HTML]{FFFFC0}}
+
+\begin{document}
+
+\input inhalt/Abkuerzungen
+\renewcommand{\abstractname}{\normalsize Abstrakt}
+\renewcommand{\refname}{\normalsize Literatur}
+
+\maketitle
+% \input hilfe/Sperrvermerk
+\input hilfe/Erklaerung
+\begin{abstract}{\small
+\input inhalt/Abstract
+\acresetall
+}\end{abstract}
+\input inhalt/1
+\printbibliography
+
+\end{document}
